@@ -1,0 +1,18 @@
+{
+  "name": "dienos_pietus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "npm install --prefix frontend && npm run dev --prefix frontend",
+    "start:backend": "npm install --prefix backend && npm run dev --prefix backend",
+    "start_backup": "npm install && npm run start:backend",
+    "start": "npm i && concurrently -k --success first -n BACKEND,FRONTEND -c cyan,magenta \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
